@@ -1,6 +1,7 @@
-import { View, Text, TouchableOpacity,ToastAndroid } from 'react-native'
+import { View, Text, TouchableOpacity,ToastAndroid,ScrollView } from 'react-native'
 import React from 'react'
 import Clipboard from '@react-native-clipboard/clipboard';
+import Adview from './Adview';
 const ScanQroutput = (props) => {
     const Copytext = () => {
         Clipboard.setString(props.route.params.data);
@@ -18,6 +19,8 @@ const ScanQroutput = (props) => {
                 padding: 10
             }}
         >
+            <ScrollView>
+
             <Text
                 style={{
 
@@ -46,6 +49,10 @@ const ScanQroutput = (props) => {
                 }}>Copy</Text>
 
             </TouchableOpacity>
+            <Adview
+            bg="#06113C"
+            />
+            </ScrollView>
         </View>
     )
 }

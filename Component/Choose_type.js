@@ -1,63 +1,71 @@
-import { View, Text,StyleSheet,TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
 import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+
+import AppLovinMAX from "react-native-applovin-max";
+import Adview from './Adview';
 const Choose_type = (props) => {
+ 
   return (
     <View
-    style={{
+      style={{
         flex: 1,
         // justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#06113C',
-        paddingTop:"51%"
-    }}
+        paddingTop: "51%"
+      }}
     >
       <TouchableOpacity
-      style={styles.button}
-        onPress={()=>props.navigation.navigate('details_picker')}
+        style={styles.button}
+        onPress={() => props.navigation.navigate('details_picker')}
       >
         <MaterialCommunityIcons
-        name="qrcode-edit"
-        size={25}
-        color="#06113C"
+          name="qrcode-edit"
+          size={25}
+          color="#06113C"
         />
-          <Text
+        <Text
           style={styles.btntext}
-          >Generate QR Code</Text>
+        >Generate QR Code</Text>
       </TouchableOpacity>
       <TouchableOpacity
-      style={styles.button}
-        onPress={()=>props.navigation.navigate('scanqr')}
+        style={styles.button}
+        onPress={() => props.navigation.navigate('scanqr')}
       >
-      <MaterialCommunityIcons
-        name="qrcode-scan"
-        size={25}
-        color="#06113C"
+        <MaterialCommunityIcons
+          name="qrcode-scan"
+          size={25}
+          color="#06113C"
         />
-         
-          <Text
-           style={styles.btntext}
-          >Scan QR Code</Text>
+
+        <Text
+          style={styles.btntext}
+        >Scan QR Code</Text>
       </TouchableOpacity>
+     <Adview
+     bg="#06113C"
+     />
+
     </View>
   )
 }
 
 export default Choose_type
 
-const styles=StyleSheet.create({
-    button:{
-        width:"50%",
-        flexDirection:"row",
-        justifyContent:"space-around",
-        padding:15,
-        borderRadius:12,
-        backgroundColor:"#FAFDD6",
-        marginTop:"5%"
-    },
-    btntext:{
-        color:"#FEB139",    
-        fontWeight:"700",
-        fontSize:15
-    }
+const styles = StyleSheet.create({
+  button: {
+    width: "50%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 15,
+    borderRadius: 12,
+    backgroundColor: "#FAFDD6",
+    marginTop: "5%"
+  },
+  btntext: {
+    color: "#FEB139",
+    fontWeight: "700",
+    fontSize: 15
+  }
 })

@@ -4,6 +4,7 @@ import React from 'react'
 import QRCode from 'react-native-qrcode-svg';
 import RNFS from "react-native-fs"
 import CameraRoll from "@react-native-community/cameraroll";
+import Adview from './Adview';
 const Generate_Qr = (props) => {
     const qrref = useRef(null)
     var d = new Date();
@@ -74,6 +75,13 @@ const Generate_Qr = (props) => {
                 <Text style={styles.TextStyle}> Click Here To Save QR Code </Text>
 
             </TouchableOpacity>
+            <View>
+
+                <Adview
+                    bg="#06113C"
+
+                />
+            </View>
         </View>
     )
 }
@@ -84,7 +92,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: "4%",
         backgroundColor: "#000",
-        padding:10
+        padding: 10
     },
 
     button: {

@@ -7,11 +7,13 @@ import Splashscreen from './Splashscreen';
 import Choose_type from './Component/Choose_type';
 import ScanQR from './Component/ScanQR';
 import ScanQroutput from './Component/ScanQroutput';
+
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [loading, setloading] = useState(true)
   useEffect(()=>{
+    
     setTimeout(() => {
         setloading(false)
     }, 3000);

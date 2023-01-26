@@ -3,12 +3,15 @@ import React from 'react'
 import Modal from 'react-native-modal';
 import { ColorPicker } from 'react-native-color-picker'
 import * as ImagePicker from 'react-native-image-picker';
+import Adview from './Adview';
+
 
 const Details_picker = (props) => {
     const [txt, settxt] = React.useState('')
     const [color_, setcolor] = React.useState('#000000')
     const [image_, setimage] = React.useState(null)
     const [modalvisible, setmodalvisible] = React.useState(false)
+   
     const GenerateQR = () => {
         if (txt.length > 0) {
             props.navigation.navigate('generate_qr', { txt: txt, color: color_, image: image_ })
@@ -96,6 +99,9 @@ const Details_picker = (props) => {
                 <Text style={styles.TextStyle}> Click Here To Generate QR Code </Text>
 
             </TouchableOpacity>
+            <Adview
+             bg="#fff"
+            />
             <Modal
                 backdropOpacity={0.5} animationIn={"fadeIn"} animationOut={'fadeOut'}
                 isVisible={modalvisible}

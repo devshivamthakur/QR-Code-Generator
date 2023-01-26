@@ -18,6 +18,7 @@
     "fbjs": "^3.0.4",
     "react": "17.0.2",
     "react-native": "0.68.1",
+    "react-native-applovin-max": "^4.1.4",
     "react-native-camera": "^1.2.0",
     "react-native-color-picker": "^0.6.0",
     "react-native-fs": "^2.19.0",

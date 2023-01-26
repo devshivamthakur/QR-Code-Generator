@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'applovin-quality-service'
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -147,8 +148,8 @@ android {
         applicationId "com.qrcodegeneratorscancer.myapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
         if (isNewArchitectureEnabled()) {
@@ -185,6 +186,7 @@ android {
       compileOptions {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
+
 }
 
 
@@ -282,6 +284,10 @@ android {
 
         }
     }
+
+    applovin {
+    apiKey "fkH3XZCSeNnwo5TAHeyIvglye7PN6HeSCwxXtGOzDGTtL5HDxnKN50vTsFqVvxz3KX0K9egdeQvuLBZM1rkgm_"    
+}
   
 }
 
@@ -296,7 +302,9 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
     }
-
+implementation ("com.google.android.gms:play-services-base:17.1.0") {
+      force = true;
+   }
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
         exclude group:'com.squareup.okhttp3', module:'okhttp'
@@ -343,3 +351,4 @@ def isNewArchitectureEnabled() {
     // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
